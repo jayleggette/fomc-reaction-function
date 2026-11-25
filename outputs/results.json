@@ -1,0 +1,270 @@
+{
+  "data_as_of": "2026-11-23",
+  "latest_inputs": {
+    "core_pce_yoy": 3.121,
+    "core_pce_month": "2026-09-01",
+    "unemployment": 4.2,
+    "nrou": 4.391,
+    "u_gap": -0.191,
+    "target_range_midpoint": 3.875,
+    "live_row": "2026-11-01",
+    "y3m": 4.32,
+    "y2": 4.63,
+    "y10": 4.92,
+    "statement_tone_latest": 0.75
+  },
+  "reaction_function": [
+    {
+      "method": "OLS, ELB dropped",
+      "sample": "1990Q1-2008Q3",
+      "n": 74,
+      "n_censored": 0,
+      "rho": 0.848,
+      "rho_se": 0.048,
+      "beta_pi": 1.315,
+      "beta_pi_se": 0.457,
+      "beta_u": -2.258,
+      "beta_u_se": 0.431,
+      "alpha": 1.351,
+      "alpha_se": 1.196,
+      "implied_r_star": 1.981,
+      "sigma": 0.452
+    },
+    {
+      "method": "OLS, ELB dropped",
+      "sample": "1990Q1-2026Q3",
+      "n": 110,
+      "n_censored": 0,
+      "rho": 0.897,
+      "rho_se": 0.024,
+      "beta_pi": 1.681,
+      "beta_pi_se": 0.512,
+      "beta_u": -2.552,
+      "beta_u_se": 0.713,
+      "alpha": -0.367,
+      "alpha_se": 1.436,
+      "implied_r_star": 0.995,
+      "sigma": 0.422
+    },
+    {
+      "method": "Tobit, ELB censored",
+      "sample": "1990Q1-2026Q3",
+      "n": 146,
+      "n_censored": 36,
+      "rho": 0.933,
+      "rho_se": 0.019,
+      "beta_pi": 1.843,
+      "beta_pi_se": 0.737,
+      "beta_u": -4.088,
+      "beta_u_se": 1.199,
+      "alpha": -1.363,
+      "alpha_se": 1.938,
+      "implied_r_star": 0.323,
+      "sigma": 0.422
+    }
+  ],
+  "prescriptions": [
+    {
+      "rule": "Taylor (1993)",
+      "r_star": 2.0,
+      "prescription": 5.873,
+      "vs_current_midpoint_pp": 1.998
+    },
+    {
+      "rule": "Balanced approach",
+      "r_star": 2.0,
+      "prescription": 6.064,
+      "vs_current_midpoint_pp": 2.189
+    },
+    {
+      "rule": "Taylor (1993)",
+      "r_star": 1.0,
+      "prescription": 4.873,
+      "vs_current_midpoint_pp": 0.998
+    },
+    {
+      "rule": "Balanced approach",
+      "r_star": 1.0,
+      "prescription": 5.064,
+      "vs_current_midpoint_pp": 1.189
+    },
+    {
+      "rule": "Taylor (1993)",
+      "r_star": 0.5,
+      "prescription": 4.373,
+      "vs_current_midpoint_pp": 0.498
+    },
+    {
+      "rule": "Balanced approach",
+      "r_star": 0.5,
+      "prescription": 4.564,
+      "vs_current_midpoint_pp": 0.689
+    },
+    {
+      "rule": "Estimated rule, long-run target (Tobit)",
+      "r_star": 0.323,
+      "prescription": 5.17,
+      "vs_current_midpoint_pp": 1.295
+    },
+    {
+      "rule": "Estimated rule, one quarter of partial adjustment",
+      "r_star": 0.323,
+      "prescription": 3.962,
+      "vs_current_midpoint_pp": 0.087
+    }
+  ],
+  "oos": {
+    "test_period": "2000-01 to 2026-09",
+    "all": {
+      "Climatology": {
+        "n": 321,
+        "brier": 0.329,
+        "brier_skill_vs_climatology": 0.0,
+        "log_loss": 0.587,
+        "accuracy": 0.779,
+        "moves_called": 0,
+        "moves": 71
+      },
+      "Policy momentum": {
+        "n": 321,
+        "brier": 0.282,
+        "brier_skill_vs_climatology": 0.142,
+        "log_loss": 0.479,
+        "accuracy": 0.776,
+        "moves_called": 10,
+        "moves": 71
+      },
+      "Macro rule": {
+        "n": 321,
+        "brier": 0.261,
+        "brier_skill_vs_climatology": 0.206,
+        "log_loss": 0.446,
+        "accuracy": 0.807,
+        "moves_called": 29,
+        "moves": 71
+      },
+      "Market only": {
+        "n": 321,
+        "brier": 0.244,
+        "brier_skill_vs_climatology": 0.259,
+        "log_loss": 0.401,
+        "accuracy": 0.813,
+        "moves_called": 37,
+        "moves": 71
+      },
+      "Full model": {
+        "n": 321,
+        "brier": 0.198,
+        "brier_skill_vs_climatology": 0.397,
+        "log_loss": 0.337,
+        "accuracy": 0.875,
+        "moves_called": 48,
+        "moves": 71
+      }
+    },
+    "off_elb": {
+      "Climatology": {
+        "n": 213,
+        "brier": 0.453,
+        "brier_skill_vs_climatology": 0.0,
+        "log_loss": 0.785,
+        "accuracy": 0.676,
+        "moves_called": 0,
+        "moves": 69
+      },
+      "Policy momentum": {
+        "n": 213,
+        "brier": 0.406,
+        "brier_skill_vs_climatology": 0.105,
+        "log_loss": 0.668,
+        "accuracy": 0.671,
+        "moves_called": 10,
+        "moves": 69
+      },
+      "Macro rule": {
+        "n": 213,
+        "brier": 0.373,
+        "brier_skill_vs_climatology": 0.177,
+        "log_loss": 0.628,
+        "accuracy": 0.718,
+        "moves_called": 29,
+        "moves": 69
+      },
+      "Market only": {
+        "n": 213,
+        "brier": 0.357,
+        "brier_skill_vs_climatology": 0.213,
+        "log_loss": 0.57,
+        "accuracy": 0.723,
+        "moves_called": 36,
+        "moves": 69
+      },
+      "Full model": {
+        "n": 213,
+        "brier": 0.285,
+        "brier_skill_vs_climatology": 0.372,
+        "log_loss": 0.479,
+        "accuracy": 0.822,
+        "moves_called": 48,
+        "moves": 69
+      }
+    },
+    "dm_full_vs_market": {
+      "all": {
+        "dm_stat": -2.066,
+        "p_value": 0.04
+      },
+      "off_elb": {
+        "dm_stat": -2.257,
+        "p_value": 0.025
+      }
+    }
+  },
+  "text_layer": {
+    "test_period": "2008-01 to 2026-09",
+    "scores_off_elb": {
+      "Climatology": {
+        "brier": 0.399,
+        "brier_skill_vs_climatology": 0.0,
+        "log_loss": 0.688
+      },
+      "Full model": {
+        "brier": 0.313,
+        "brier_skill_vs_climatology": 0.216,
+        "log_loss": 0.524
+      },
+      "Full model + statement tone": {
+        "brier": 0.314,
+        "brier_skill_vs_climatology": 0.211,
+        "log_loss": 0.53
+      }
+    },
+    "dm_tone_vs_no_tone_off_elb": {
+      "dm_stat": 0.136,
+      "p_value": 0.892
+    }
+  },
+  "nowcast": {
+    "next_meeting": "2026-12-09",
+    "models": {
+      "Full model": {
+        "cut": 0.002,
+        "hold": 0.173,
+        "hike": 0.825,
+        "C": 0.1
+      },
+      "Market only": {
+        "cut": 0.002,
+        "hold": 0.181,
+        "hike": 0.817,
+        "C": 0.3
+      },
+      "Macro rule": {
+        "cut": 0.078,
+        "hold": 0.413,
+        "hike": 0.51,
+        "C": 0.1
+      }
+    }
+  }
+}
