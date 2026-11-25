@@ -1,0 +1,3 @@
+comparison,mean_brier_diff,dm_stat,p_value
+Full model + statement tone vs Climatology,-0.08427120652648051,-1.603635472282167,0.1115138282597019
+Full model + statement tone vs Full model,0.0017604820411908674,0.13570823309122942,0.8922871595229491
